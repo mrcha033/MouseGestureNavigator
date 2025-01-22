@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" version="1.1" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background circle -->
+    <circle cx="64" cy="64" r="60" fill="#4285f4" />
+    
+    <!-- Gesture trail -->
+    <path d="M 40,64 C 40,40 64,40 88,64" 
+          stroke="#ffffff" 
+          stroke-width="8" 
+          fill="none" 
+          stroke-linecap="round"/>
+    
+    <!-- Mouse cursor -->
+    <path d="M 35,35 L 55,55 L 35,55 Z" 
+          fill="#ffffff" 
+          transform="rotate(-45, 45, 45)"/>
+</svg> 

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Gesture Navigator - Options</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .gesture-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .gesture-pattern {
+            flex: 1;
+            margin-right: 15px;
+        }
+        .gesture-action {
+            flex: 1;
+        }
+        select {
+            padding: 5px;
+            width: 200px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .help-text {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mouse Gesture Navigator Settings</h1>
+    
+    <div id="gesture-settings"></div>
+    
+    <button id="save">Save Settings</button>
+    
+    <div class="help-text">
+        <h3>How to use gestures:</h3>
+        <p>Hold right mouse button and move in the following patterns:</p>
+        <ul>
+            <li><strong>L</strong> - Left</li>
+            <li><strong>R</strong> - Right</li>
+            <li><strong>U</strong> - Up</li>
+            <li><strong>D</strong> - Down</li>
+            <li><strong>DR</strong> - Down then Right</li>
+            <li><strong>DL</strong> - Down then Left</li>
+            <li><strong>UD</strong> - Up then Down</li>
+        </ul>
+    </div>
+
+    <script src="options.js"></script>
+</body>
+</html> 
