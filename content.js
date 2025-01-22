@@ -9,16 +9,16 @@ class GestureDetector {
     }
 
     bindEvents() {
+        // Prevent context menu before any mouse events
+        document.addEventListener('contextmenu', this.preventDefault);
         document.addEventListener('mousedown', this.startTracking.bind(this));
         document.addEventListener('mousemove', this.track.bind(this));
         document.addEventListener('mouseup', this.endTracking.bind(this));
-        document.addEventListener('contextmenu', this.preventDefault.bind(this));
     }
 
     preventDefault(e) {
-        if (this.isTracking) {
-            e.preventDefault();
-        }
+        e.preventDefault();
+        return false;
     }
 
     startTracking(e) {
@@ -28,6 +28,7 @@ class GestureDetector {
             this.points = [{x: e.clientX, y: e.clientY}];
             this.gesture = '';
             this.drawGesture(e.clientX, e.clientY);
+            e.preventDefault(); // Prevent context menu
         }
     }
 
@@ -42,9 +43,10 @@ class GestureDetector {
             this.updateGesture(lastPoint, newPoint);
             this.drawGesture(e.clientX, e.clientY);
         }
+        e.preventDefault(); // Prevent any default behavior during tracking
     }
 
-    endTracking() {
+    endTracking(e) {
         if (!this.isTracking) return;
         
         this.isTracking = false;
@@ -55,6 +57,10 @@ class GestureDetector {
                 type: 'GESTURE_COMPLETED',
                 gesture: this.gesture
             });
+        }
+        
+        if (e) {
+            e.preventDefault(); // Prevent any default behavior when ending
         }
     }
 
@@ -127,4 +133,4 @@ class GestureDetector {
 }
 
 // Initialize the gesture detector
-new GestureDetector(); 
+const detector = new GestureDetector(); 
