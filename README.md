@@ -1,65 +1,79 @@
 # Mouse Gesture Navigator
 
-A Chrome extension that allows you to navigate using mouse gestures. Perform actions like going back, forward, opening new tabs, and more with simple mouse movements.
+Control your browser faster and more efficiently with mouse gestures! 🚀
 
-## Features
+## Why Mouse Gesture Navigator?
 
-- Mouse gesture navigation support
-- Customizable gesture mappings
-- Visual feedback while drawing gestures
-- Default gestures:
-  - Left (L) → Go Back
-  - Right (R) → Go Forward
-  - Down + Right (DR) → New Tab
-  - Down + Left (DL) → Close Tab
-  - Up + Down (UD) → Reload Page
+✨ **Save Time**: Perform browser actions with simple gestures while holding the right mouse button. No need to click toolbar buttons or memorize keyboard shortcuts.
+
+🎯 **Intuitive Usage**: Control your browser with natural movements - swipe left to go back, right to go forward, and more.
+
+⚡ **Boost Productivity**: Execute common browser functions quickly to significantly improve your web browsing speed.
+
+🛠️ **Customizable**: Configure gestures and functions to control your browser in your own way.
+
+## Key Features
+
+### Basic Gestures
+- ⬅️ Swipe Left (L) → Go Back
+- ➡️ Swipe Right (R) → Go Forward
+- ↘️ Down then Right (DR) → Open New Tab
+- ↙️ Down then Left (DL) → Close Tab
+- ↕️ Up then Down (UD) → Refresh Page
+
+### Special Features
+- 🎨 Visual feedback while drawing gestures
+- ⚙️ User-configurable gesture mapping
+- 🎯 Accurate gesture recognition
 
 ## Installation
 
-1. Clone or download this repository
-2. Open Chrome and go to `chrome://extensions/`
+1. Download or clone this repository
+2. Go to `chrome://extensions/` in Chrome browser
 3. Enable "Developer mode" in the top right
-4. Click "Load unpacked" and select the extension directory
-
-## Usage
-
-1. Hold the right mouse button and draw a gesture
-2. Release the right mouse button to execute the action
-3. A red line will show your gesture path while drawing
+4. Click "Load unpacked" and select the extension folder
 
 ## Customization
 
-1. Click the extension icon in Chrome's toolbar
-2. Select "Options" from the popup menu
-3. Customize gesture mappings according to your preferences
-4. Click "Save" to apply changes
+1. Click the Mouse Gesture Navigator icon in the Chrome toolbar
+2. Select "Options"
+3. Map your desired gestures and functions
+4. Click "Save" to store your settings
 
-## Available Actions
+## Tech Stack
 
-- Go Back
-- Go Forward
-- Reload Page
-- New Tab
-- Close Tab
-
-## Development
-
-The extension is built using:
 - Manifest V3
 - JavaScript
 - Chrome Extension APIs
 
-### Project Structure
+## Permissions Explained
 
-```
-├── manifest.json        # Extension manifest
-├── background.js       # Background service worker
-├── content.js         # Content script for gesture detection
-├── options.html       # Options page HTML
-├── options.js        # Options page JavaScript
-└── README.md         # This file
-```
+### Required Permissions
+
+#### 🔑 "tabs"
+- Access and manipulate browser tabs
+- Required for:
+  - Opening new tabs
+  - Closing current tab
+  - Getting tab information for navigation
+  - Switching between tabs
+
+#### 💾 "storage"
+- Store user preferences and settings
+- Required for:
+  - Saving custom gesture configurations
+  - Persisting user settings across browser sessions
+  - Storing gesture mapping data
+
+#### 🌐 "host_permissions"
+- Access to webpage information
+- Required for:
+  - Capturing mouse movements on web pages
+  - Executing navigation commands (back/forward)
+  - Ensuring gesture recognition works across all websites
+
+These permissions are essential for core functionality and are used only for gesture recognition and navigation purposes. We respect your privacy and do not collect any personal data.
 
 ## License
 
-MIT License 
+MIT License
